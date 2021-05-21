@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+</head>
+
+<body>
+  <div class="myContainer">
+    <div class="myHeader">
+      <div class="myLogo">
+        Gerenciador de Tarefas
+      </div>
+    </div>
+
+    <div class="myContent">
+      <div class="cardAtivity" id="teste" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="cardTitle">To Do</div>
+        <button type="button" class="btnNew" data-toggle="modal" data-target="#myModal"><i
+            class="glyphicon glyphicon-plus"></i>
+        </button>
+        <div id="cards">
+          <!-- Dados sendo consultado pelo firebase.js -->
+
+        </div>
+      </div>
+
+      <div class="cardAtivity" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="cardTitle">Doing</div>
+
+      </div>
+
+      <div class="cardAtivity" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="cardTitle">Done</div>
+
+      </div>
+
+
+
+      <!-- MODAL START -->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Nova Atividade</h4>
+            </div>
+            <div class="modal-body">
+              <label class="newAtivityLabel">ID</label>
+              <input type="text" id="input-id" maxlength="8"
+                onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="newAtivityInput">
+              <div class="textHelper">Digitar apenas números</div>
+              <label class="newAtivityLabel">Titulo</label>
+              <input type="text" id="input-task" class="newAtivityInput">
+
+              <label class="newDescriptionLabel">Descrição</label>
+              <textarea class="newDescriptionInput" id="input-description" rows="4" cols="50"></textarea>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" id="btnInsert" class="btn btn-primary">Enviar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- MODAL END -->
+
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+    </script>
+    <script src="js/script.js"></script>
+    <script src="js/firebase.js "></script>
+    <script src="https://unpkg.com/sweetalert2@7.12.15/dist/sweetalert2.all.js"></script>
+
+</body>
+
+</html>
